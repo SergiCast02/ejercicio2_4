@@ -1,7 +1,9 @@
 package com.example.ejercicio2_4;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -19,13 +21,15 @@ import com.example.ejercicio2_4.db.DbSignaturess;
 public class MainActivity extends AppCompatActivity {
     Lienzo lienzo_firma;
     EditText txt_descripcion;
+    Button btn_verfirmas;
+    Button btn_salvarfirma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn_salvarfirma = findViewById(R.id.salvar);
+        btn_salvarfirma = findViewById(R.id.salvar);
         btn_salvarfirma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{Toast.makeText(getApplicationContext(),"No se guardó el Registro", Toast.LENGTH_SHORT).show();;}
                 }
+            }
+        });
+
+        btn_verfirmas = findViewById(R.id.verfirmas);
+        btn_verfirmas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), FirmasCards.class);
+                startActivity(i);
             }
         });
     }

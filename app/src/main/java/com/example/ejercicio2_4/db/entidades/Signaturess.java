@@ -7,6 +7,15 @@ public class Signaturess {
     private byte[] firma;
     String descripcion;
 
+    public Signaturess(){
+    }
+
+    public Signaturess(int id, byte[] firma, String descripcion) {
+        this.id = id;
+        this.firma = firma;
+        this.descripcion = descripcion;
+    }
+
     public int getId() {
         return id;
     }
