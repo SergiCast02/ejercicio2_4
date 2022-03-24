@@ -31,6 +31,7 @@ public class FirmasCards extends AppCompatActivity {
     }
 
     public List<Signaturess> obtenerFirmas () {
+        System.out.println(signatures.mostrarFirmas());
         return signatures.mostrarFirmas();
     }
 }
