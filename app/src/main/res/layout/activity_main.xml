@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F44336"
+    android:backgroundTint="@color/teal_200"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/descripcion"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="244dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgfirma"
+        app:layout_constraintVertical_bias="0.833" />
+
+    <Button
+        android:id="@+id/salvar"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
+        android:text="Salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion"
+        app:layout_constraintVertical_bias="0.346" />
+
+    <Button
+        android:id="@+id/verfirmas"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="18dp"
+        android:text="Ver Firmas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salvar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.example.ejercicio2_4.Lienzo
+        android:id="@+id/imgfirma"
+        android:layout_width="375dp"
+        android:layout_height="250dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
