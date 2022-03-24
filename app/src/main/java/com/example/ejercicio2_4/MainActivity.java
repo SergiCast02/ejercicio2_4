@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     EditText txt_descripcion;
     Button btn_verfirmas;
     Button btn_salvarfirma;
+    ImageButton btn_borrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
                     DbSignaturess dbFirmas = new DbSignaturess(MainActivity.this);
                     long id = dbFirmas.insertarFirma(firma, descripcion);
                     if (id>0){
-                        Toast.makeText(getApplicationContext(),"Registro Guardado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Firma Guardada", Toast.LENGTH_SHORT).show();
                         limpiar();
                         finish();
                         startActivity(getIntent()); //Recargar Activity
                     }
-                    else{Toast.makeText(getApplicationContext(),"No se guardó el Registro", Toast.LENGTH_SHORT).show();;}
+                    else{Toast.makeText(getApplicationContext(),"No se guardó la firma", Toast.LENGTH_SHORT).show();}
                 }
             }
         });
@@ -64,13 +66,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        btn_borrar = findViewById(R.id.btnBorrar);
+        btn_borrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                borrar();
+            }
+        });
     }
 
     private void limpiar(){
+        lienzo_firma = findViewById(R.id.imgfirma);
         lienzo_firma.NuevoDibujo();
         txt_descripcion.setText("");
     }
 
+    private void borrar(){
+        lienzo_firma = findViewById(R.id.imgfirma);
+        lienzo_firma.NuevoDibujo();
+    }
 
 
 }

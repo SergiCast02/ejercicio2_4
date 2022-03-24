@@ -44,7 +44,7 @@ public class Lienzo extends View {
 
         //setTamanyoPunto(20);
 
-        drawPaint.setStrokeWidth(20);
+        drawPaint.setStrokeWidth(5);
         drawPaint.setStyle(Paint.Style.STROKE);
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
         drawPaint.setStrokeCap(Paint.Cap.ROUND);
