@@ -61,31 +61,6 @@ public class DbSignaturess extends DbHelper{
         return bitmap;
     }
 
-//    public ArrayList<Signaturess> mostrarFirmas(){
-//        DbHelper dbHelper = new DbHelper(context);
-//        SQLiteDatabase db = dbHelper.getWritableDatabase();
-//
-//        ArrayList<Signaturess> listaFirmas = new ArrayList<>();
-//        Signaturess firma = null;
-//        Cursor cursorFirmas = null;
-//
-//        cursorFirmas = db.rawQuery("SELECT * FROM " + TABLE_FIRMAS,null);
-//
-//        if(cursorFirmas.moveToFirst()){
-//            do{
-//                firma = new Signaturess();
-//                firma.setId(cursorFirmas.getInt(0));
-//                firma.setFirma(cursorFirmas.getBlob(1));
-//                firma.setDescripcion(cursorFirmas.getString(2));
-//                listaFirmas.add(firma);
-//            }while (cursorFirmas.moveToNext());
-//        }
-//
-//        cursorFirmas.close();
-//
-//        return listaFirmas;
-//    }
-
     public ArrayList<Signaturess> mostrarFirmas(){
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -110,6 +85,7 @@ public class DbSignaturess extends DbHelper{
 
         return listaFirmas;
     }
+
 
     public Signaturess verFirmas(int id){
         DbHelper dbHelper = new DbHelper(context);
